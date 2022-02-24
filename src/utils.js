@@ -3,13 +3,22 @@ const readline = require("readline");
 
 // PRINT OUT THE RESULT
 const printOutput = (outputPath, outputs) => {
+  if (outputs.length <= 0) {
+    console.error("No solution");
+    return;
+  }
   fs.open(outputPath, "w", (err, fd) => {
     if (err) {
       console.error("ERROR!...");
       return;
     }
     // write header
-    fs.writeSync(fd, `${outputs.length} ${outputs.join(" ")}`);
+    fs.writeSync(fd, `${outputs.length}\n`);
+    for (let index = 0; index < outputs.length; index++) {
+      const currentProject = outputs[index];
+      fs.writeSync(fd, `${currentProject.name}\n`);
+      fs.writeSync(fd, `${currentProject.contributorNames.join(" ")}\n`);
+    }
     fs.closeSync(fd);
   });
 };

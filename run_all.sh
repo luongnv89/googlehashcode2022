@@ -1,5 +1,6 @@
 node src/index.js data/a_an_example.in.txt
-node src/index.js data/b_basic.in.txt
-node src/index.js data/c_coarse.in.txt
-node src/index.js data/d_difficult.in.txt
-node src/index.js data/e_elaborate.in.txt
+node src/index.js data/b_better_start_small.in.txt
+node src/index.js data/c_collaboration.in.txt
+node src/index.js data/d_dense_schedule.in.txt
+node src/index.js data/e_exceptional_skills.in.txt
+node src/index.js data/f_find_great_mentors.in.txt
